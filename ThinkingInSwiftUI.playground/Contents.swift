@@ -8,6 +8,7 @@ struct ContentView: View {
         VStack {
             Button(action: { self.tapCount += 1 }, label: {
                 Text("Tap me!")
+                    .font(.largeTitle)
                     .padding()
                     .background(Color(.tertiarySystemFill))
                     .cornerRadius(5)
@@ -19,6 +20,15 @@ struct ContentView: View {
                 Text("You've not yet tapped")
             }
         }
+        .background(Color(.green))
+        .debug()
+    }
+}
+
+extension View {
+    func debug() -> Self {
+        print(Mirror(reflecting: self).subjectType)
+        return self
     }
 }
 
