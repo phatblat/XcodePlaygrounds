@@ -21,6 +21,8 @@ struct ContentView: View {
             }
         }
         .background(Color(.green))
+        .frame(width: 200, height: 200)
+        .border(Color.black)
         .debug()
     }
 }
